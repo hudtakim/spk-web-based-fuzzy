@@ -126,8 +126,6 @@ include "functions/functions.php";
 
 	<div class='container mt-5'>
     <?php
-  
-    
       $krit_aktif = mysqli_query($conn,"SELECT * from daftar_kriteria");
       $baris=mysqli_num_rows($krit_aktif);
       if($baris == 0){
@@ -373,7 +371,7 @@ include "functions/functions.php";
           ?>
           <h5 class="mt-3">Berikut adalah rekomendasi yang memenuhi kriteria di atas:</h5>
           <?php } else { ?>
-          <h5 class="mt-3">Tidak ditemukan rekomendasi yang memenuhi kriteria, berikut hasil yang paling mendekati:</h5>
+          <h5 class="mt-3">Tidak ditemukan rekomendasi yang memenuhi seluruh kriteria di atas, berikut hasil yang paling mendekati:</h5>
           <?php } ?>
             <table class='table table-bordered'>
               <thead class="thead-dark">
@@ -878,6 +876,31 @@ include "functions/functions.php";
 			</div>
 		</div>
 	</div>
+
+  <!-- Footer -->
+<footer class="bg-dark text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Text -->
+    <section class="m-3">
+      <p>
+        "Sistem Pendukung Keputusan Berbasis Web ini merupakan aplikasi web yang dapat membantu para pengguna dalam menentukan suatu keputusan dengan memberikan rekomendasi terbaik berdasarkan kriteria yang diinginkan."
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="#">HDM-Vision - hudtakim@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 </html>
 <script src="javascript/optional_input_kriteria.js"></script>
