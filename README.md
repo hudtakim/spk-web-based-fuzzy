@@ -33,7 +33,7 @@ Admin Guide:
    - Menambah data kriteria
    - Menghapus data kriteria
    - Mengaktifkan atau menonaktifkan kriteria pada tampilan user.
-   - Mengatur tampilan web (Nama kota, gambar banner, dan warna latar belakang)
+   - Mengatur tampilan web (Deskripsi Web, gambar banner, dan warna latar belakang)
 
 Perhatian: 
 1. Projek ini dibuat sebagai latihan/pembelajaran saja.
