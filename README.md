@@ -1,11 +1,8 @@
 # spk-web-based-fuzzy
-Sebuah proyek sistem pendukung keputusan berbasis web dengan metode Fuzzy
+Sebuah proyek sistem pendukung keputusan berbasis web dengan metode Fuzzy.
 
 # spk-fuzzy-dynamic
-Versi dinamis dari spk fuzzy sebelumnya
-
-# SPK-Pariwisata-Fuzzy
-Implementasi Fuzzy Tahani Pada Database MySQL dan Aplikasi Berbasis Web dengan PHP
+Versi dinamis dan dapat dicustom untuk SPK pada kasus apapun.
 
 Instalasi:
 1. Pastikan Mysql dan PHP sudah terinstal di perangkat anda.
