@@ -9,10 +9,10 @@ if($_SESSION['legitUser'] != 'qwerty'){
 
     $result = mysqli_query($conn, "UPDATE setting_tampilan SET nama_wilayah = '$nama_wilayah'");
     if($result){
-        $message = "Nama kota/wilayah berhasil diperbaharui.";
+        $message = "Deskripsi Website berhasil diperbaharui.";
         echo "<script>alert('$message'); window.location.replace('../pages/pengaturan_tampilan.php');</script>";
     }else{
-        $message = "Update nama kota/wilayah gagal.";
+        $message = "Update Deskripsi Website gagal.";
         echo "<script>alert('$message'); window.location.replace('../pages/pengaturan_tampilan.php');</script>";
     }
 }
