@@ -102,7 +102,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark mt-0 fixed-top">
     <div class="container">
-    <a href="index.php" class="navbar-brand">SPK Wisata</a>
+    <a href="../index.php" class="navbar-brand">SPK Wisata</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
