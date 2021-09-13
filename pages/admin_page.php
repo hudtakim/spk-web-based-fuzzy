@@ -90,7 +90,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   

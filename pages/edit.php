@@ -140,7 +140,7 @@ else{$available_krit=5;}
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -303,14 +303,14 @@ else{$available_krit=5;}
 						</div>
 					</div>
 
-                    <div class="mt-3"> Edit data kriteria untuk masing-masing lokasi wisata: </div>
+                    <div class="mt-3"> Edit data kriteria untuk masing-masing data: </div>
                     <div class="col-auto my-1 input-group"> 
                     <?php if($kategori == "fuzzy") {?>
 					<table class='table table-bordered mt-2' id="tabel_fuzzyx">
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Lokasi</th>
+                                <th>Nama</th>
                                 <th class="label-kriteria">Data Kriteria</th>
                             </tr>
                         </thead>
@@ -336,7 +336,7 @@ else{$available_krit=5;}
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Lokasi</th>
+                                <th>Nama</th>
                                 <th class="label-kriteria">Data Kriteria</th>
                             </tr>
                         </thead>

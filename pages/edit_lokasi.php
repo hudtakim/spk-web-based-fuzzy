@@ -13,7 +13,7 @@ $id_lokasi = $_GET['id'];
 $result = mysqli_query($conn, "SELECT * FROM tempat_wisata_tb WHERE (id = '$id_lokasi')");
 $rowcount = mysqli_num_rows($result);
 if($rowcount == 0){
-    $message = "Mohon maaf, lokasi wisata yang anda pilih tidak tersedia di database.";
+    $message = "Mohon maaf, data yang anda pilih tidak tersedia di database.";
     echo "<script>alert('$message'); window.location.replace('data_lokasi_wisata.php');</script>";
 }
 $data_lokasi = $result->fetch_assoc();
@@ -133,7 +133,7 @@ $available_krit = count($arr_name_krit);
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -169,10 +169,10 @@ $available_krit = count($arr_name_krit);
 </div>
 </nav>
 	<div class='container mt-5'>
-    <p align="center"><b>Edit Data Objek Wisata <?=$nama_lokasi?></b></p>
-		<a href="data_lokasi_wisata.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Kembali ke Pengaturan Lokasi Wisata</button></a>
+    <p align="center"><b>Edit Data <?=$nama_lokasi?></b></p>
+		<a href="data_lokasi_wisata.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Kembali ke Pengaturan Data</button></a>
         <message>
-            Isi form berikut untuk mengedit data lokasi wisata.
+            Isi form berikut untuk mengedit data.
         <message>
 
 		<div class="tambah-lokasi mt-4 mb-5">
@@ -180,9 +180,9 @@ $available_krit = count($arr_name_krit);
 				<div class="form-row align-items-center">
 					<div class="col-auto my-1 input-group">
                         <div>
-                        <label style="display:block;" class="label">Nama Lokasi</label>
+                        <label style="display:block;" class="label">Nama</label>
 						<input style="display:none;" value="<?=$id_lokasi?>" type="number" name="id_lokasi" class="mr-1 mt-3" required>
-                        <input style="display:block;" value="<?=$nama_lokasi?>" type="text" name="nama"  placeholder="Nama Lokasi" class="mr-1 mt-3" required>
+                        <input style="display:block;" value="<?=$nama_lokasi?>" type="text" name="nama"  placeholder="Nama" class="mr-1 mt-3" required>
                         </div>
                     
                         <?php

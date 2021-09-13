@@ -95,7 +95,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -131,17 +131,17 @@ if($_SESSION['legitUser'] != 'qwerty'){
 </div>
 </nav>
 	<div class='container mt-5'>
-		<p align="center"><b>Pengaturan Data Lokasi Wisata</b></p>
+		<p align="center"><b>Pengaturan Data</b></p>
 		<a href="admin.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Kembali ke Menu Utama</button></a>
         <message>
-            Isi form berikut untuk menambah data lokasi wisata.
+            Isi form berikut untuk menambah data.
         <message>
 
 		<div class="tambah-lokasi mt-4">
 			<form method='POST' action="../functions/tambah_lokasi.php">
 				<div class="form-row align-items-center">
 					<div class="col-auto my-1 input-group">
-                        <input type="text" name="nama"  placeholder="Nama Lokasi" class="mr-1 mt-3" required>
+                        <input type="text" name="nama"  placeholder="Nama" class="mr-1 mt-3" required>
 						<?php
 							$daftar_kriteria = mysqli_query($conn,"SELECT * from daftar_kriteria_static WHERE (kategori = 'non_fuzzy')");
 							while($data = mysqli_fetch_array($daftar_kriteria)):
@@ -196,13 +196,13 @@ if($_SESSION['legitUser'] != 'qwerty'){
 		$jumlah_wisata = mysqli_num_rows($result);
 		if($jumlah_wisata == 0){
 			echo "<div class='m-5'>";
-			echo "<h5>Belum ada data lokasi wisata di database, silahkan tambahkan data.</h5>";
+			echo "<h5>Belum ada data di database, silahkan tambahkan data.</h5>";
 			echo "</div>";
 		}else{
 
 		?>
         <div class="mt-4">
-			Berikut adalah daftar lokasi wisata yang terdaftar pada sistem:
+			Berikut adalah data yang sudah terdaftar pada sistem:
         </div>
 
 		<div class="data-lokasi mt-4">
@@ -210,7 +210,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
                 <thead class="thead-dark">
                     <tr>
                         <th>No</th>
-                        <th>Nama Lokasi</th>
+                        <th>Nama</th>
 						<?php
 							$daftar_kriteria = mysqli_query($conn,"SELECT * from daftar_kriteria_static");
 							while($data = mysqli_fetch_array($daftar_kriteria)):

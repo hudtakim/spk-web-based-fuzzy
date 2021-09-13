@@ -89,7 +89,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -131,7 +131,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
         </message>
 		
 		<div class="main-menu mt-5">
-            <a href="data_lokasi_wisata.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Pengaturan Data Lokasi Wisata</button></a>
+            <a href="data_lokasi_wisata.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Pengaturan Data</button></a>
             <a href="admin_page.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Pengaturan Kriteria SPK</button></a>
 			<a href="pengaturan_tampilan.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-5">Pengaturan Tampilan Web</button></a>
 		</div>

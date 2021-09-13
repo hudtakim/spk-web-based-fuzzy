@@ -89,7 +89,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -135,7 +135,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 			<form method='POST' action="../functions/set_wilayah.php">
 				<div class="form-row align-items-center">
 					<div class="col-auto my-1 input-group">
-                        <input type="text" name="nama_wilayah"  placeholder="Nama Kota atau Wilayah" class="mr-1 form-control" required>
+                        <input type="text" name="nama_wilayah"  placeholder="Deskripsi Website" class="mr-1 form-control" required>
                         <button type="submit" class="btn btn-success float ml-3 pl-5 pr-5" name="submit">Terapkan</button>
 					</div>
 				</div>
@@ -143,7 +143,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 			<form method='POST' action="../functions/set_banner.php">
 				<div class="form-row align-items-center">
 					<div class="col-auto my-1 input-group">
-                        <input type="text" name="url"  placeholder="URL Gambar" class="mr-1 mt-3 form-control" required>
+                        <input type="text" name="url"  placeholder="URL Gambar Banner" class="mr-1 mt-3 form-control" required>
                         <button type="submit" class="btn btn-success float ml-3 mt-3 pl-5 pr-5" name="submit">Terapkan</button>
 					</div>
 				</div>

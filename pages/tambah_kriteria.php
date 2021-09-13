@@ -108,7 +108,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -188,13 +188,13 @@ if($_SESSION['legitUser'] != 'qwerty'){
 						</div>
 					</div>
 
-                    <div class="mt-3"> Isikan data kriteria untuk masing-masing lokasi wisata: </div>
+                    <div class="mt-3"> Isikan data kriteria untuk masing-masing data: </div>
                     <div class="col-auto my-1 input-group"> 
                     <table class='table table-bordered mt-2' id="tabel_fuzzy" style="display: none;">
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Lokasi</th>
+                                <th>Nama</th>
                                 <th class="label-kriteria">Data Kriteria</th>
                             </tr>
                         </thead>
@@ -219,7 +219,7 @@ if($_SESSION['legitUser'] != 'qwerty'){
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Lokasi</th>
+                                <th>Nama</th>
                                 <th class="label-kriteria">Data Kriteria</th>
                             </tr>
                         </thead>
