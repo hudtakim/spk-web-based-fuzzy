@@ -87,7 +87,7 @@ include "functions/functions.php";
 				$row = $result->fetch_row();
 				$value = $row[0] ?? false;
 			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;">Pemilihan Objek Pariwisata <?=$value?></p>
+			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
 </div>
 	</div>
   
@@ -131,9 +131,9 @@ include "functions/functions.php";
       $krit_aktif = mysqli_query($conn,"SELECT * from daftar_kriteria");
       $baris=mysqli_num_rows($krit_aktif);
       if($baris == 0){
-        echo "<p align='center'><b>Mohon maaf, tidak ada kriteria wisata yang aktif, silahkan hubungi admin.</b></p>";
+        echo "<p align='center'><b>Mohon maaf, tidak ada kriteria SPK yang aktif, silahkan hubungi admin.</b></p>";
       }else{
-        echo "<p align='center'><b>Silahkan Masukkan Kriteria Objek Wisata</b></p>";
+        echo "<p align='center'><b>Silahkan Pilih Kriteria yang Anda Inginkan</b></p>";
     ?>
 		<form class="mb-5" method='GET' action="#" onsubmit="myJsFunction();return false">
 			<div class="form-row align-items-center">
@@ -371,15 +371,15 @@ include "functions/functions.php";
 					}else{ 
             if($status == "pakai_and"){  
           ?>
-          <h5 class="mt-3">Berikut adalah rekomendasi objek wisata yang memenuhi kriteria di atas:</h5>
+          <h5 class="mt-3">Berikut adalah rekomendasi yang memenuhi kriteria di atas:</h5>
           <?php } else { ?>
-          <h5 class="mt-3">Tidak ditemukan objek wisata yang memenuhi kriteria, berikut rekomendasi yang paling mendekati:</h5>
+          <h5 class="mt-3">Tidak ditemukan rekomendasi yang memenuhi kriteria, berikut hasil yang paling mendekati:</h5>
           <?php } ?>
             <table class='table table-bordered'>
               <thead class="thead-dark">
                 <tr>
                   <th>No</th>
-                  <th>Nama Wisata</th>
+                  <th>Nama</th>
                   <?php
                     $daftar_kriteria = mysqli_query($conn,"SELECT * from input_user_tb");
                     while($data = mysqli_fetch_array($daftar_kriteria)):
@@ -820,7 +820,7 @@ include "functions/functions.php";
 					<thead class="thead-dark">
 						<tr>
 							<th>No</th>
-							<th>Nama Wisata</th>
+							<th>Nama</th>
 							<?php
 								$daftar_kriteria = mysqli_query($conn,"SELECT * from input_user_tb");
 								while($data = mysqli_fetch_array($daftar_kriteria)):
