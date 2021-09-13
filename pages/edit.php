@@ -185,7 +185,7 @@ else{$available_krit=5;}
 					<input name="id_krit" type="text" value="<?=$id_krit?>" style="display:none;">
 					<input name="name_krit" type="text" value="<?=$nama_kriteria?>" style="display:none;">
 					<input name="kategori" type="text" value="<?=$kategori?>" style="display:none;">
-				<div class="mt-3"> Jenis kriteria: <div>
+				<div class="mt-3"> Jenis kriteria: </div>
 					<div class="col-auto my-1 input-group">
 						<select disabled name="kategorix" class="custom-select mr-sm-1" id="inlineFormCustomSelect" onChange="myFunction()" required>
 							<option value="">Choose...</option>
@@ -199,7 +199,7 @@ else{$available_krit=5;}
 						<?php } ?>	
 						</select>
                     </div>
-					<div class="mt-3"> Edit jumlah sub-kriteria yang akan digunakan: <div>
+					<div class="mt-3"> Edit jumlah sub-kriteria yang akan digunakan: </div>
 					<div class="col-auto my-1 input-group">
 						<?php if($available_krit == 2){ ?>
 							<select name="jumlah_sub" class="custom-select mr-sm-1" id="jumlah_subs" onChange="myFunction2()" required>
@@ -235,7 +235,7 @@ else{$available_krit=5;}
 							</select>
 							<?php } ?>
                     </div>
-                    <div class="mt-3"> Edit nama kriteria dan sub-kriteria: <span style="color:red; font-size: 16px;" class="ml-2">*hanya menerima input a-z, A-Z, 0-9, _</span><div>
+                    <div class="mt-3"> Edit nama kriteria dan sub-kriteria: <span style="color:red; font-size: 16px;" class="ml-2">*hanya menerima input a-z, A-Z, 0-9, _</span></div>
 					<div class="col-auto my-1 input-group">
 					<?php if($available_krit == 2){ ?>
                         <input type="text" value="<?=$kriteria?>" name="nama"  placeholder="Nama Kriteria" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,50}" required>
@@ -502,7 +502,7 @@ else{$available_krit=5;}
 		</div>
 	</div>
 
-	  <!-- Footer -->
+<!-- Footer -->
 <footer class="bg-dark text-center text-white mt-5">
   <!-- Grid container -->
   <div class="container p-4">

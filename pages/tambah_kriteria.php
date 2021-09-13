@@ -100,49 +100,46 @@ if($_SESSION['legitUser'] != 'qwerty'){
     $row = $result->fetch_row();
     $value = $row[0] ?? false;
 ?>
-<div class="jumbotron" id='home' mb-0 style="background-image:url(<?=$value?>)">
-    <div style="margin-top:60px;margin-bottom:20px;">
-			<h1 class="text-light shadow-lg"><a href="../index.php">Sistem Pendukung Keputusan</a></h1>
-			<?php
-				$result = mysqli_query($conn, "SELECT DISTINCT nama_wilayah FROM setting_tampilan");
-				$row = $result->fetch_row();
-				$value = $row[0] ?? false;
-			?>
-			<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
-</div>
+	<div class="jumbotron" id='home' mb-0 style="background-image:url(<?=$value?>)">
+		<div style="margin-top:60px;margin-bottom:20px;">
+				<h1 class="text-light shadow-lg"><a href="../index.php">Sistem Pendukung Keputusan</a></h1>
+				<?php
+					$result = mysqli_query($conn, "SELECT DISTINCT nama_wilayah FROM setting_tampilan");
+					$row = $result->fetch_row();
+					$value = $row[0] ?? false;
+				?>
+				<p class="h3 text-light shadow-lg" style="text-shadow: 2px 2px red;"><?=$value?></p>
+		</div>
 	</div>
   
 
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark mt-0 fixed-top">
-    <div class="container">
-    <a href="../index.php" class="navbar-brand">SPK Wisata</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mt-0 fixed-top">
+		<div class="container">
+			<a href="../index.php" class="navbar-brand">SPK Wisata</a>
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-        <div class="navbar-nav">
-            <a href="#" class="nav-item nav-link active"></a>
-            <a href="../index.php" class="nav-item nav-link">Sistem Rekomendasi</a>
-            <?php
-            if(isset($_SESSION['legitUser'])){
-              echo '<a href="admin.php" class="nav-item nav-link">Pengaturan</a>';
-            }
-            ?> 
-        </div>
-        <?php
-      if(isset($_SESSION['legitUser'])){
-      
-      echo '<div class="navbar-nav"><a href="../functions/logout.php" class="nav-item nav-link">Logout</a></div>';
-      }else{
-      
-        echo '<div class="navbar-nav"><a href="login_form.html" class="nav-item nav-link">Login Admin</a></div>';
-   
-      }
-      ?>   
-    </div>
-</div>
-</nav>
+			<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+				<div class="navbar-nav">
+					<a href="#" class="nav-item nav-link active"></a>
+					<a href="../index.php" class="nav-item nav-link">Sistem Rekomendasi</a>
+					<?php
+					if(isset($_SESSION['legitUser'])){
+					echo '<a href="admin.php" class="nav-item nav-link">Pengaturan</a>';
+					}
+					?> 
+				</div>
+			<?php
+				if(isset($_SESSION['legitUser'])){
+					echo '<div class="navbar-nav"><a href="../functions/logout.php" class="nav-item nav-link">Logout</a></div>';
+				}else{
+					echo '<div class="navbar-nav"><a href="login_form.html" class="nav-item nav-link">Login Admin</a></div>';
+				}
+			?>   
+			</div>
+		</div>
+	</nav>
 	<div class='container mt-5'>
 		<p align="center"><b>Tambah Data Kriteria Wisata</b></p>
 		<a href="admin_page.php"><button type="button" class="btn btn-info btn-lg btn-block mt-4 mb-4">Kembali ke Pengaturan Kriteria</button></a>  
@@ -150,139 +147,141 @@ if($_SESSION['legitUser'] != 'qwerty'){
 		<div class="tambah-lokasi mt-4">
 			<form method='POST' action="../functions/tambah_kriteria_process.php" name="form-kriteria" onsubmit="return validateForm()">
 				<div class="form-row align-items-center">
-				<div class="mt-3"> Pilih jenis kriteria: <div>
-					<div class="col-auto my-1 input-group">
-						<select name="kategori" class="custom-select mr-sm-1" id="inlineFormCustomSelect" onChange="myFunction()" required>
-							<option value="">Choose...</option>
-							<option value="fuzzy">Kriteria Fuzzy</option>
-							<option value="non_fuzzy">Kriteria Non-Fuzzy</option>
-						</select>
-                    </div>
-					<div class="mt-3"> Pilih jumlah sub-kriteria yang akan digunakan: <div>
-					<div class="col-auto my-1 input-group">
-						<select name="jumlah_sub" class="custom-select mr-sm-1" id="jumlah_subs" onChange="myFunction2()" required>
-							<option value=""hidden disabled></option>
-							<option value="2" selected>2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-                    </div>
-                    <div class="mt-3"> Isikan nama kriteria dan sub-kriteria: <span style="color:red; font-size: 16px;" class="ml-2">*hanya menerima input a-z, A-Z, 0-9, _</span><div>
-					<div class="col-auto my-1 input-group">
-                        <input type="text"  name="nama"  placeholder="Nama Kriteria" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,50}" required>
-                        <input type="text" id="sub1" name="sub1"  placeholder="Sub Kriteria 1" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" required>
-                        <input type="text" id="sub2" name="sub2"  placeholder="Sub Kriteria 2" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" required>
-						<input type="text" id="sub3" name="sub3"  placeholder="Sub Kriteria 3" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
-						<input type="text" id="sub4" name="sub4"  placeholder="Sub Kriteria 4" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
-						<input type="text" id="sub5" name="sub5"  placeholder="Sub Kriteria 5" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
-                    </div>
-					<div id="coba" style="display: none;">
-						<div class="mt-3"> Isikan nilai batas:</div>
-						<div class="col-auto my-1 input-group">            
-							<input name="batas1" type="number" id="v1" placeholder="Batas 1" class="mr-2" required>
-							<input name="batas2" type="number" id="v2" placeholder="Batas 2" class="mr-2" required>
-							<input name="batas3" type="number" id="v3" placeholder="Batas 3" class="mr-2" style="display: none;"> 
-							<input name="batas4" type="number" id="v4" placeholder="Batas 4" class="mr-2" style="display: none;"> 
-							<input name="batas5" type="number" id="v5" placeholder="Batas 5" class="mr-2" style="display: none;">  
+					<div class="mt-3"> Pilih jenis kriteria: </div>
+						<div class="col-auto my-1 input-group">
+							<select name="kategori" class="custom-select mr-sm-1" id="inlineFormCustomSelect" onChange="myFunction()" required>
+								<option value="">Choose...</option>
+								<option value="fuzzy">Kriteria Fuzzy</option>
+								<option value="non_fuzzy">Kriteria Non-Fuzzy</option>
+							</select>
+						</div>
+						<div class="mt-3"> Pilih jumlah sub-kriteria yang akan digunakan: </div>
+						<div class="col-auto my-1 input-group">
+							<select name="jumlah_sub" class="custom-select mr-sm-1" id="jumlah_subs" onChange="myFunction2()" required>
+								<option value=""hidden disabled></option>
+								<option value="2" selected>2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select>
+						</div>
+						<div class="mt-3"> Isikan nama kriteria dan sub-kriteria: <span style="color:red; font-size: 16px;" class="ml-2">*hanya menerima input a-z, A-Z, 0-9, _</span><div>
+						<div class="col-auto my-1 input-group">
+							<input type="text"  name="nama"  placeholder="Nama Kriteria" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,50}" required>
+							<input type="text" id="sub1" name="sub1"  placeholder="Sub Kriteria 1" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" required>
+							<input type="text" id="sub2" name="sub2"  placeholder="Sub Kriteria 2" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" required>
+							<input type="text" id="sub3" name="sub3"  placeholder="Sub Kriteria 3" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
+							<input type="text" id="sub4" name="sub4"  placeholder="Sub Kriteria 4" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
+							<input type="text" id="sub5" name="sub5"  placeholder="Sub Kriteria 5" class="mr-2 mb-3" onChange="updateSubText()" pattern="[a-zA-Z_0-9]{1,30}" style="display: none;">
+						</div>
+						<div id="coba" style="display: none;">
+							<div class="mt-3"> Isikan nilai batas:</div>
+							<div class="col-auto my-1 input-group">            
+								<input name="batas1" type="number" id="v1" placeholder="Batas 1" class="mr-2" required>
+								<input name="batas2" type="number" id="v2" placeholder="Batas 2" class="mr-2" required>
+								<input name="batas3" type="number" id="v3" placeholder="Batas 3" class="mr-2" style="display: none;"> 
+								<input name="batas4" type="number" id="v4" placeholder="Batas 4" class="mr-2" style="display: none;"> 
+								<input name="batas5" type="number" id="v5" placeholder="Batas 5" class="mr-2" style="display: none;">  
+							</div>
+						</div>
+
+						<div class="mt-3"> Isikan data kriteria untuk masing-masing data: </div>
+							<div class="col-auto my-1 input-group"> 
+								<table class='table table-bordered mt-2' id="tabel_fuzzy" style="display: none;">
+									<thead class="thead-dark">
+										<tr>
+											<th>No</th>
+											<th>Nama</th>
+											<th class="label-kriteria">Data Kriteria</th>
+										</tr>
+									</thead>
+									<tbody>
+
+									<?php
+										$result = mysqli_query($conn,"SELECT * from tempat_wisata_tb");
+										$num = 1;
+										while($data = mysqli_fetch_array($result)):
+									?>
+										<tr>
+											<th><?=$num;?></th>
+											<th><?=$data['obyek_wisata'];?></th>
+											<th><input name="datakriteria<?=$data['id'];?>" type="number" placeholder="Nilai Kriteria" class="datakriteria" required></th>
+										</tr>
+
+									<?php $num++; endwhile;?>
+
+									</tbody>
+								</table>
+								<table class='table table-bordered mt-2' id="tabel_non" style="display: none;">
+									<thead class="thead-dark">
+										<tr>
+											<th>No</th>
+											<th>Nama</th>
+											<th class="label-kriteria">Data Kriteria</th>
+										</tr>
+									</thead>
+									<tbody>
+
+									<?php
+										$result = mysqli_query($conn,"SELECT * from tempat_wisata_tb");
+										$num = 1;
+										while($data = mysqli_fetch_array($result)):
+									?>
+										<tr>
+											<th><?=$num;?></th>
+											<th><?=$data['obyek_wisata'];?></th>
+											<th>
+												<select name="datakritnon<?=$data['id'];?>" class="custom-select mr-sm-1 datakritnon" required>
+													<option value="" class="s0">Choose...</option>
+													<option value="sub1" class="s1">Sub Kriteria 1</option>
+													<option value="sub2" class="s2">Sub Kriteria 2</option>
+													<option value="sub3" class="s3" disabled>Sub Kriteria 3</option>
+													<option value="sub4" class="s4" disabled>Sub Kriteria 4</option>
+													<option value="sub5" class="s5" disabled>Sub Kriteria 5</option>
+												</select>
+											</th>
+										</tr>
+
+									<?php $num++; endwhile;?>
+
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 
-                    <div class="mt-3"> Isikan data kriteria untuk masing-masing data: </div>
-                    <div class="col-auto my-1 input-group"> 
-                    <table class='table table-bordered mt-2' id="tabel_fuzzy" style="display: none;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th class="label-kriteria">Data Kriteria</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        <?php
-                            $result = mysqli_query($conn,"SELECT * from tempat_wisata_tb");
-                            $num = 1;
-                            while($data = mysqli_fetch_array($result)):
-                        ?>
-                            <tr>
-                                <th><?=$num;?></th>
-                                <th><?=$data['obyek_wisata'];?></th>
-                                <th><input name="datakriteria<?=$data['id'];?>" type="number" placeholder="Nilai Kriteria" class="datakriteria" required></th>
-                            </tr>
-
-                        <?php $num++; endwhile;?>
-
-                        </tbody>
-                    </table>
-					<table class='table table-bordered mt-2' id="tabel_non" style="display: none;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th class="label-kriteria">Data Kriteria</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        <?php
-                            $result = mysqli_query($conn,"SELECT * from tempat_wisata_tb");
-                            $num = 1;
-                            while($data = mysqli_fetch_array($result)):
-                        ?>
-                            <tr>
-                                <th><?=$num;?></th>
-                                <th><?=$data['obyek_wisata'];?></th>
-								<th>
-								<select name="datakritnon<?=$data['id'];?>" class="custom-select mr-sm-1 datakritnon" required>
-									<option value="" class="s0">Choose...</option>
-									<option value="sub1" class="s1">Sub Kriteria 1</option>
-									<option value="sub2" class="s2">Sub Kriteria 2</option>
-									<option value="sub3" class="s3" disabled>Sub Kriteria 3</option>
-									<option value="sub4" class="s4" disabled>Sub Kriteria 4</option>
-									<option value="sub5" class="s5" disabled>Sub Kriteria 5</option>
-								</select>
-								</th>
-							</tr>
-
-                        <?php $num++; endwhile;?>
-
-                        </tbody>
-                    </table>
-                    </div>
-
-                    <div class="col-12 my-1">
-                        <button type="submit" class="btn btn-success btn-lg btn-block mt-4 mb-4" name="submit">Tambah Kriteria</button>
-                    </div>
+					<div class="col-12 my-1">
+						<button type="submit" class="btn btn-success btn-lg btn-block mt-4 mb-4" name="submit">Tambah Kriteria</button>
+					</div>		
 				</div>
 			</form>
 		</div>
 	</div>
 
-	  <!-- Footer -->
-<footer class="bg-dark text-center text-white mt-5">
-  <!-- Grid container -->
-  <div class="container p-4">
+	<!-- Footer -->
+	<footer class="bg-dark text-center text-white mt-5">
+		<!-- Grid container -->
+		<div class="container p-4">
 
-    <!-- Section: Text -->
-    <section class="m-3">
-      <p>
-        "Sistem Pendukung Keputusan Berbasis Web ini merupakan aplikasi web yang dapat membantu para pengguna dalam menentukan suatu keputusan dengan memberikan rekomendasi terbaik berdasarkan kriteria yang diinginkan."
-      </p>
-    </section>
-    <!-- Section: Text -->
+			<!-- Section: Text -->
+			<section class="m-3">
+			<p>
+				"Sistem Pendukung Keputusan Berbasis Web ini merupakan aplikasi web yang dapat membantu para pengguna dalam menentukan suatu keputusan dengan memberikan rekomendasi terbaik berdasarkan kriteria yang diinginkan."
+			</p>
+			</section>
+			<!-- Section: Text -->
 
-  </div>
-  <!-- Grid container -->
+		</div>
+		<!-- Grid container -->
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-white" href="#">HDM-Vision - hudtakim@gmail.com</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+		<!-- Copyright -->
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			© 2021 Copyright:
+			<a class="text-white" href="#">HDM-Vision - hudtakim@gmail.com</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
+	<!-- Footer -->
 
 </body>
 </html>
