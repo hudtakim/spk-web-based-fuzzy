@@ -15,11 +15,13 @@ if(isset($_POST['submit'])){
     $input_kriteria = array();
     $list_kriteria = array();
     $list_kriteria2 = array();
+    $list_kategori = array();
     while($data = mysqli_fetch_array($arr_kriteria)):
         $kriteria = strtolower($data['kriteria']);
         array_push($input_kriteria, $_POST[$kriteria]);
         array_push($list_kriteria, $kriteria);
         array_push($list_kriteria2, $data['kriteria']);
+        array_push($list_kategori, $data['kategori']);
     endwhile;
 
     //cek dulu apakah sudah ada di database
@@ -41,7 +43,7 @@ if(isset($_POST['submit'])){
                 $cek = mysqli_query($conn,"SELECT * from tempat_wisata_tb WHERE (obyek_wisata = '$ob_wis')");
                 $count_cek = mysqli_num_rows($cek);
                 if($count_cek == 0){
-                    if($value == "fuzzy"){
+                    if($list_kategori[$x] == "fuzzy"){
                         $sukses = mysqli_query($conn, "INSERT INTO tempat_wisata_tb(obyek_wisata, {$krit}) 
                         VALUES('$ob_wis', '$valkrit')");
                     }else{
@@ -56,10 +58,7 @@ if(isset($_POST['submit'])){
                         VALUES('$ob_wis', '$valu')");
                     }
                 }else{
-                    $get_kategori = mysqli_query($conn,"SELECT kategori from daftar_kriteria_static WHERE (kriteria = '$krit2')");
-                    $row = $get_kategori->fetch_row();
-                    $value = $row[0] ?? false;
-                    if($value == "fuzzy"){
+                    if($list_kategori[$x] == "fuzzy"){
                         $sukses = mysqli_query($conn, "UPDATE tempat_wisata_tb SET {$krit} = $valkrit WHERE (obyek_wisata = '$ob_wis')");
                     }else{
                         $get_kategori = mysqli_query($conn,"SELECT * from daftar_kriteria_static WHERE (kriteria = '$krit2')");
@@ -189,7 +188,7 @@ if(isset($_POST['submit'])){
         
         //if($result){ 
         $message = "Berhasil menambahkan data.";
-        echo "<script>alert('$message'); window.location.replace('../pages/data_lokasi_wisata.php');</script>";
+        echo "<script>alert('$message')";// window.location.replace('../pages/data_lokasi_wisata.php');</script>";
         //}
             //echo "<h1>WARNING !!!</h1> <br>";
             //echo $sukses;
