@@ -188,7 +188,7 @@ if(isset($_POST['submit'])){
         //$result = mysqli_query($conn, "ALTER TABLE tempat_wisata_tb AUTO_INCREMENT = 1");
         
         //if($result){ 
-        $message = "Berhasil menambahkan data lokasi wisata.";
+        $message = "Berhasil menambahkan data.";
         echo "<script>alert('$message'); window.location.replace('../pages/data_lokasi_wisata.php');</script>";
         //}
             //echo "<h1>WARNING !!!</h1> <br>";

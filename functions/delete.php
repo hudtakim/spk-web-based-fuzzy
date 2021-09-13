@@ -16,7 +16,7 @@ if($item == 'lokasi'){
     $result = mysqli_query($conn,"SELECT * from tempat_wisata_tb");
     $rowcount=mysqli_num_rows($result);
     if(false){
-        $message = "[GAGAL!!!] - Setidaknya harus ada 1 data lokasi wisata yang tersimpan pada database.";
+        $message = "[GAGAL!!!] - Setidaknya harus ada 1 data yang tersimpan pada database.";
         echo "<script>alert('$message'); window.location.replace('../pages/data_lokasi_wisata.php');</script>";
     }else{
         $del = mysqli_query($conn,"DELETE FROM tempat_wisata_tb where id = '$id'");
@@ -37,7 +37,7 @@ if($del)
         header("location:../pages/admin_page.php"); // redirects to all records page
     }
     if($item == 'lokasi'){
-        $message = "Berhasil menghapus data lokasi wisata.";
+        $message = "Berhasil menghapus data.";
         echo "<script>alert('$message'); window.location.replace('../pages/data_lokasi_wisata.php');</script>";
         //header("location:data_lokasi_wisata.php"); // redirects to all records page
     }
