@@ -1,0 +1,10 @@
+Kekurangan Sementara SPK Wisata (Menurut hudtakim@hdmvision):
+
+1. User belum bisa menentukan jumlah kriteria yang akan di pakai. 
+   (Jumlah kriteria Fix dari setting oleh admin)
+2. Belum ada fitur update data lokasi, 
+  (Data lokasi lama harus dihapus terlebih dahulu jika ingin meng-update)
+3. Belum ada fitur update kriteria
+   (Data kriteria lama harus dihapus terlebih dahulu jika ingin meng-update)
+
+- 8 Sept 2021 -
