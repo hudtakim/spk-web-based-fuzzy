@@ -212,6 +212,32 @@ if($_SESSION['legitUser'] != 'qwerty'){
 		</div>
 
 	</div>
+
+	  <!-- Footer -->
+<footer class="bg-dark text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Text -->
+    <section class="m-3">
+      <p>
+        "Sistem Pendukung Keputusan Berbasis Web ini merupakan aplikasi web yang dapat membantu para pengguna dalam menentukan suatu keputusan dengan memberikan rekomendasi terbaik berdasarkan kriteria yang diinginkan."
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="#">HDM-Vision - hudtakim@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
 </body>
 </html>
 
