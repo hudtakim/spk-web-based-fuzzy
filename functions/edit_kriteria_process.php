@@ -39,8 +39,10 @@ if(isset($_POST['submit'])){
     $lokasiarr = array();
     //cek duplicate on nama kriteria or subkrit
     if($nama_sub3 == ""){
-        $array_to_check_dup = array(strtolower($nama_kriteria), strtolower($nama_sub1),strtolower($nama_sub2),strtolower($nama_sub3));
+        $array_to_check_dup = array(strtolower($nama_kriteria), strtolower($nama_sub1),strtolower($nama_sub2));
     }elseif($nama_sub4 == ""){
+        $array_to_check_dup = array(strtolower($nama_kriteria), strtolower($nama_sub1),strtolower($nama_sub2),strtolower($nama_sub3));
+    }elseif($nama_sub5 == ""){
         $array_to_check_dup = array(strtolower($nama_kriteria), strtolower($nama_sub1),strtolower($nama_sub2),strtolower($nama_sub3),strtolower($nama_sub4));
     }else{
         $array_to_check_dup = array(strtolower($nama_kriteria), strtolower($nama_sub1),strtolower($nama_sub2),strtolower($nama_sub3),strtolower($nama_sub4),strtolower($nama_sub5));
@@ -346,7 +348,7 @@ if(isset($_POST['submit'])){
         } 
     }else{
         $message = "GAGAL - Nama kriteria atau subkriteria harus unik.";
-        echo "<script>alert('$message'); window.location.replace('../pages/admin_page.php');</script>";
+        echo "<script>alert('$message'); window.location.replace('../pages/edit.php?nama_krit=$nama_kriteria');</script>";
     }
 }
 ?>
