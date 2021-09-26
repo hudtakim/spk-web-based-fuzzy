@@ -1,1 +1,3 @@
 Initial database, silahkan import ke phpmysql anda
+
+Catatan, file init DB belum di publikasikan karena aplikasi masih dalam tahap pengembangan.
