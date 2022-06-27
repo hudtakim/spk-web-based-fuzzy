@@ -1,5 +1,5 @@
 # spk-web-based-fuzzy
-Sebuah proyek sistem pendukung keputusan berbasis web dengan metode Fuzzy.
+Sebuah proyek sistem pendukung keputusan berbasis web dengan metode Fuzzy Tahani yang menerapkan kombinasi logika AND dan OR. Dimana penerapan logika AND akan diprioritaskan, sedangkan logika OR akan diterapkan apabila firestrength dari logika AND semuanya bernilai nol.
 
 # spk-fuzzy-dynamic
 Versi dinamis dan dapat dicustom untuk SPK pada kasus apapun.
