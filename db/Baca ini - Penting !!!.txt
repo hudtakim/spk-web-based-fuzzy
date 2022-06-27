@@ -1,3 +1,1 @@
 Initial database, silahkan import file sql ke phpmysql anda.
-
-jika menginginkan file.sql silahkan DM instagram dikapermanaputra
