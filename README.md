@@ -38,5 +38,12 @@ Admin Guide:
 Perhatian: 
 1. Projek ini dibuat sebagai latihan/pembelajaran saja.
 2. Data lokasi wisata yang digunakan untuk uji coba aplikasi web ini saya ambil dari salah satu paper penelitian di internet.
-3. Dilarang diperjualbelikan.
+3. Dilarang diperjualbelikan kecuali saya sendiri yang jual.
 4. Untuk mencoba aplikasi ini secara langsung silahkan menuju link berikut: http://hudtakim.byethost12.com/spkwisata  <--- (Last Update 13 Sept 2021)
+
+
+
+Oleh,
+
+
+Huda Mustakim S.Kom
