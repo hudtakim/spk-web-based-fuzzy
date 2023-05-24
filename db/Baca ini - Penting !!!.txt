@@ -1,1 +1,3 @@
 Initial database, silahkan import file sql ke phpmysql anda.
+
+Hapus file_db.sql dan ganti dengan file sql yang sebenarnya
