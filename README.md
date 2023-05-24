@@ -2,7 +2,7 @@
 Sebuah proyek sistem pendukung keputusan berbasis web dengan metode Fuzzy Tahani yang menerapkan kombinasi logika AND dan OR. Dimana penerapan logika AND akan diprioritaskan, sedangkan logika OR akan diterapkan apabila firestrength dari logika AND semuanya bernilai nol.
 
 # Tujuan
-- Sebagai proyek sistem pendukung keputusan berbasis web bersama Dika Permana Putra S.Kom.
+- Sebagai proyek sistem pendukung keputusan berbasis web bersama Dika Permana Putra
 - Dibuat untuk keperluan belajar dan tugas kuliah
 
 # spk-fuzzy-dynamic
@@ -50,4 +50,4 @@ Perhatian:
 Oleh,
 
 
-Huda Mustakim S.Kom
+Huda Mustakim
